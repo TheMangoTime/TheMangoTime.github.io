@@ -2,68 +2,125 @@
 <html>
 <head>
   <title>Vision – Mango Time</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background: #0b0c10;
-      color: #ffffff;
+      margin: 0;
       font-family: Arial, sans-serif;
-      padding: 60px;
+      background: #0b0c10; /* black background */
+      color: #f0f0f0; /* bright text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      height: 100vh;
+      padding: 20px;
     }
+
+    .container {
+      max-width: 90%;
+    }
+
     h1 {
-      font-size: 52px;
+      font-size: clamp(42px, 6vw, 72px);
       color: #ff7a00;
       margin-bottom: 30px;
     }
+
     h2 {
-      font-size: 34px;
-      margin-top: 40px;
+      font-size: clamp(28px, 4vw, 36px);
       color: #f0c36d;
+      margin-top: 30px;
     }
+
     p {
-      font-size: 22px;
-      max-width: 900px;
-      margin: 15px auto;
+      font-size: clamp(18px, 3vw, 28px);
       line-height: 1.6;
+      margin: 15px 0;
     }
+
     .btn {
       display: inline-block;
       margin-top: 40px;
-      padding: 12px 35px;
+      padding: 14px 36px;
       font-size: 20px;
       background: #ff7a00;
       color: #fff;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       transition: 0.3s;
     }
+
     .btn:hover {
       background: #ff9a2f;
       transform: scale(1.05);
+    }
+
+    /* Sticky header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    header h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #ff7a00;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #f0f0f0;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff7a00;
     }
   </style>
 </head>
 <body>
 
-  <h1>Our Vision</h1>
+  <header>
+    <h2>Mango Time</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="vision.html">Vision</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  <h2>Vision</h2>
-  <p>
-    To shape the future by building intelligent technologies that improve human life.
-  </p>
+  <div class="container">
+    <h1>Our Vision</h1>
 
-  <h2>Mission</h2>
-  <p>
-    Our mission is to grow into a global technology company and develop our own
-    artificial intelligence systems.
-  </p>
+    <h2>Vision</h2>
+    <p>
+      To shape the future by building intelligent technologies that improve human life.
+    </p>
 
-  <h2>What We Are Building</h2>
-  <p>
-    AI research, smart automation tools, and future-oriented digital products.
-  </p>
+    <h2>Mission</h2>
+    <p>
+      Our mission is to grow into a global technology company and develop our own artificial intelligence systems.
+    </p>
 
-  <a href="index.html" class="btn">Home</a>
+    <h2>What We Are Building</h2>
+    <p>
+      AI research, smart automation tools, and future-oriented digital products.
+    </p>
+
+    <a href="index.html" class="btn">Home</a>
+  </div>
 
 </body>
 </html>
