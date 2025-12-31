@@ -5,34 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background: #fffaf0;
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #f0e5c2, #d6b25e); /* soft gold */
       font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 60px 20px;
+      padding: 20px;
       color: #000;
     }
 
+    .container {
+      max-width: 90%;
+    }
+
     h1 {
-      font-size: 48px;
-      color: #d4af37;
+      font-size: clamp(42px, 6vw, 72px);
+      color: #ff7a00;
+      text-shadow: 0 0 12px rgba(255,122,0,0.6);
+      margin-bottom: 30px;
     }
 
     p {
-      font-size: 22px;
-      max-width: 850px;
-      margin: 25px auto;
+      font-size: clamp(18px, 3vw, 28px);
       line-height: 1.6;
+      margin-bottom: 40px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 30px;
-      padding: 12px 35px;
+      margin: 10px;
+      padding: 14px 36px;
       font-size: 20px;
-      background: #ff7a00;
       color: #fff;
+      background: #ff7a00;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       transition: 0.3s;
     }
 
@@ -44,15 +54,17 @@
 </head>
 <body>
 
-  <h1>About Mango Time</h1>
+  <div class="container">
+    <h1>About Mango Time</h1>
 
-  <p>
-    The Mango Time company was founded on December 23, 2025 by Abraham hsjaze.
-    Our main goal is to become a major technology company and create our own AI.
-    We aim to build powerful innovations and achieve great things in the future.
-  </p>
+    <p>
+      Mango Time is a future-focused technology company founded on December 23, 2025 by <strong>Abraham hsjaze</strong>.<br><br>
+      Our vision is to grow into a major global technology brand with a strong focus on innovation and artificial intelligence. We aim to design and develop our own AI systems that can create real value for people and businesses.<br><br>
+      Mango Time is not just a company — it is a mindset. We believe in long-term thinking, smart solutions, and building technologies that shape the future. Our journey has just begun, and our goal is to achieve great things through creativity, discipline, and ambition.
+    </p>
 
-  <a href="index.html" class="btn">Home</a>
+    <a href="index.html" class="btn">Home</a>
+  </div>
 
 </body>
 </html>
