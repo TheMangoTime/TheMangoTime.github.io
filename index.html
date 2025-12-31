@@ -2,54 +2,72 @@
 <html>
 <head>
   <title>Mango Time</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background: linear-gradient(135deg, #d6b25e, #f3e2b3); /* soft golden */
-      color: #000;
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #d6b25e, #f3e2b3);
       font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding-top: 90px;
     }
+
+    .container {
+      max-width: 90%;
+    }
+
     h1 {
-      font-size: 60px;
+      font-size: clamp(42px, 6vw, 72px);
       color: #ff7a00;
       text-shadow: 0 0 12px rgba(255,122,0,0.6);
+      margin-bottom: 20px;
     }
+
     p {
-      font-size: 26px;
-      margin-top: 20px;
+      font-size: clamp(20px, 3vw, 30px);
+      margin-bottom: 40px;
+      color: #000;
     }
+
     .btn {
       display: inline-block;
-      margin: 15px;
-      padding: 15px 40px;
-      font-size: 22px;
+      margin: 10px;
+      padding: 14px 36px;
+      font-size: 20px;
       color: #fff;
       background: #ff7a00;
       text-decoration: none;
       border-radius: 10px;
       transition: 0.3s;
     }
+
     .btn:hover {
       background: #ff9a2f;
       transform: scale(1.05);
     }
+
     .credit {
       margin-top: 45px;
-      font-size: 18px;
+      font-size: 16px;
       color: #333;
     }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to Mango Time 🚀</h1>
-  <p>Discover the future of technology</p>
+  <div class="container">
+    <h1>Welcome to Mango Time 🚀</h1>
+    <p>Discover the future of technology</p>
 
-  <a href="about.html" class="btn">About</a>
-  <a href="vision.html" class="btn">Vision</a>
+    <a href="about.html" class="btn">About</a>
+    <a href="vision.html" class="btn">Vision</a>
+    <a href="contact.html" class="btn">Contact</a>
 
-  <p class="credit">Created by HSJAZE</p>
+    <div class="credit">hsjaze</div>
+  </div>
 
 </body>
 </html>
