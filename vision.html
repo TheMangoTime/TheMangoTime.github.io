@@ -4,24 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vision - Mango Time</title>
-<style>
-body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
-nav a { color: cyan; margin: 0 15px; text-decoration: none; font-weight: bold; }
-h1 { font-size: 2.5em; margin-top: 50px; }
-p { font-size: 1.3em; margin: 20px; max-width: 800px; margin-left:auto;margin-right:auto;}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="renderAuthButtons(); renderLanguage();">
 
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="vision.html">Vision</a>
   <a href="contact.html">Contact</a>
+  <span id="auth-buttons"></span>
+  <span id="language-switch"></span>
 </nav>
 
-<h1>Our Vision</h1>
-<p>At Mango Time, we aim to innovate the future of technology, build intelligent AI systems, and create solutions that change the world.</p>
+<h1 data-en="Our Vision" data-tr="Vizyonumuz" data-es="Nuestra Visión">Our Vision</h1>
+<p data-en="At Mango Time, we aim to innovate the future of technology, build intelligent AI systems, and create solutions that change the world."
+   data-tr="Mango Time'da, teknolojinin geleceğini yenilikçi bir şekilde şekillendirmeyi, akıllı AI sistemleri geliştirmeyi ve dünyayı değiştirecek çözümler yaratmayı hedefliyoruz."
+   data-es="En Mango Time, nuestro objetivo es innovar el futuro de la tecnología, construir sistemas de IA inteligentes y crear soluciones que cambien el mundo.">
+At Mango Time, we aim to innovate the future of technology, build intelligent AI systems, and create solutions that change the world.
+</p>
 
+<footer>
+  Created by HSJAZE
+</footer>
+
+<script src="auth.js"></script>
+<script src="lang.js"></script>
 </body>
 </html>
