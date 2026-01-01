@@ -35,10 +35,10 @@ p{font-size:24px;margin-bottom:40px;}
 <section id="home">
   <h1 data-key="homeTitle">Welcome to Mango Time 🚀</h1>
   <p data-key="homeText">Discover the future of technology</p>
-  <a href="about.html" class="btn">About</a>
-  <a href="vision.html" class="btn">Vision</a>
-  <a href="contact.html" class="btn">Contact</a>
-  <div class="credit">Created by hsjaze</div>
+  <a href="about.html" class="btn" data-key="btnAbout">About</a>
+  <a href="vision.html" class="btn" data-key="btnVision">Vision</a>
+  <a href="contact.html" class="btn" data-key="btnContact">Contact</a>
+  <div class="credit" data-key="credit">Created by hsjaze</div>
 </section>
 
 <div class="lang-switch">
@@ -49,11 +49,24 @@ p{font-size:24px;margin-bottom:40px;}
 
 <script>
 const translations={
-en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Welcome to Mango Time 🚀",homeText:"Discover the future of technology"},
-tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Welcome to Mango Time 🚀",homeText:"Discover the future of technology"},
-es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Welcome to Mango Time 🚀",homeText:"Discover the future of technology"}
+en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Welcome to Mango Time 🚀",homeText:"Discover the future of technology",btnAbout:"About",btnVision:"Vision",btnContact:"Contact",credit:"Created by hsjaze"},
+tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Mango Time'e Hoş Geldiniz 🚀",homeText:"Teknolojinin geleceğini keşfedin",btnAbout:"About",btnVision:"Vision",btnContact:"Contact",credit:"Created by hsjaze"},
+es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Bienvenido a Mango Time 🚀",homeText:"Descubre el futuro de la tecnología",btnAbout:"About",btnVision:"Vision",btnContact:"Contact",credit:"Created by hsjaze"}
 };
-function setLang(lang){document.querySelectorAll("[data-key]").forEach(el=>{el.textContent=translations[lang][el.dataset.key];});}
+
+function setLang(lang){
+  localStorage.setItem('lang', lang);
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    if(translations[lang][el.dataset.key]) el.textContent=translations[lang][el.dataset.key];
+  });
+}
+
+// Yüklənəndə saxlanmış dili istifadə et
+window.onload = function(){
+  const lang = localStorage.getItem('lang') || 'en';
+  setLang(lang);
+};
 </script>
+
 </body>
 </html>
