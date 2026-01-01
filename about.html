@@ -3,58 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mango Time - About</title>
+<title>About - Mango Time</title>
 <style>
-body {margin:0;font-family:Arial, sans-serif;background:#000;color:white;text-align:center;}
-header{display:flex;justify-content:space-between;align-items:center;padding:10px 40px;}
-.logo{font-size:26px;font-weight:600;color:#00fff7;text-shadow:0 0 8px #00fff7;}
-nav a{margin:0 10px;text-decoration:none;color:white;font-size:14px;}
-nav a:hover{color:#00fff7;}
-section{padding:80px 20px;max-width:900px;margin:auto;}
-h2{font-size:36px;margin-bottom:20px;color:#ffd700;}
-p{font-size:24px;margin-bottom:40px;}
-.lang-switch{position:fixed;bottom:15px;right:20px;font-size:14px;opacity:.7;}
-.lang-switch button{background:transparent;border:1px solid #00fff7;color:#00fff7;margin-left:5px;cursor:pointer;}
+body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
+nav a { color: cyan; margin: 0 15px; text-decoration: none; font-weight: bold; }
+h1 { font-size: 2.5em; margin-top: 50px; }
+p { font-size: 1.3em; margin: 20px; max-width: 800px; margin-left:auto;margin-right:auto;}
+button { padding: 10px 20px; margin: 10px; font-size:1em; cursor:pointer; border:none;border-radius:5px;background-color:cyan;color:black;}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo" data-key="logo">Mango Time</div>
-  <nav>
-    <a href="index.html" data-key="navHome">Home</a>
-    <a href="about.html" data-key="navAbout">About</a>
-    <a href="vision.html" data-key="navVision">Vision</a>
-    <a href="contact.html" data-key="navContact">Contact</a>
-  </nav>
-</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="vision.html">Vision</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-<section id="about">
-  <h2 data-key="aboutTitle">About Mango Time</h2>
-  <p data-key="aboutText">The Mango Time company was founded on 23 December 2025 by Abraham hsjaze. Our main goal is to become a major technology company, create our AI, and achieve great things.</p>
-</section>
+<h1>About Mango Time</h1>
+<p>The Mango Time company was founded on December 23, 2025 by Abraham HSJAZE. Our main goal is to become a major technology company, create our own AI, and achieve big things.</p>
 
-<div class="lang-switch">
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('tr')">TR</button>
-  <button onclick="setLang('es')">ES</button>
-</div>
-
-<script>
-const translations={en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"The Mango Time company was founded on 23 December 2025 by Abraham hsjaze. Our main goal is to become a major technology company, create our AI, and achieve great things."},tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"Mango Time şirketi 23 Aralık 2025'te Abraham hsjaze tarafından kuruldu. Ana hedefimiz büyük bir teknoloji şirketi olmak, AI'mızı yaratmak ve büyük işler başarmaktır."},es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"La empresa Mango Time fue fundada el 23 de diciembre de 2025 por Abraham hsjaze. Nuestro objetivo principal es convertirnos en una gran empresa tecnológica, crear nuestra IA y lograr grandes cosas."}};
-
-function setLang(lang){
-  localStorage.setItem('lang', lang);
-  document.querySelectorAll("[data-key]").forEach(el=>{
-    if(translations[lang][el.dataset.key]) el.textContent=translations[lang][el.dataset.key];
-  });
-}
-
-window.onload = function(){
-  const lang = localStorage.getItem('lang') || 'en';
-  setLang(lang);
-};
-</script>
+<button onclick="window.location.href='index.html'">Back to Home</button>
 
 </body>
 </html>
