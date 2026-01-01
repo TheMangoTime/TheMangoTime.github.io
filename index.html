@@ -9,16 +9,16 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #0b0b0b;
+  background: #000;
   color: white;
+  text-align: center;
 }
 
-/* ===== HEADER ===== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 10px 40px;
 }
 
 .logo {
@@ -39,41 +39,64 @@ nav a:hover {
   color: #00fff7;
 }
 
-/* ===== LANGUAGE SWITCH ===== */
-.lang {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-}
-
-.lang button {
-  background: transparent;
-  border: 1px solid #00fff7;
-  color: #00fff7;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-/* ===== SECTIONS ===== */
+/* Sections */
 section {
-  padding: 70px 40px;
+  padding: 80px 20px;
   max-width: 900px;
   margin: auto;
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 56px;
   margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 26px;
-  margin-bottom: 15px;
+  color: #ffd700;
 }
 
 p {
-  opacity: 0.85;
-  line-height: 1.6;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 36px;
+  font-size: 20px;
+  color: #000;
+  background: #ffd700;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ffea70;
+  transform: scale(1.05);
+}
+
+/* Credit */
+.credit {
+  margin-top: 40px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* Language switch */
+.lang-switch {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.lang-switch button {
+  background: transparent;
+  border: 1px solid #00fff7;
+  color: #00fff7;
+  margin-left: 5px;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -82,7 +105,6 @@ p {
 
 <header>
   <div class="logo" data-key="logo">Mango Time</div>
-
   <nav>
     <a href="#home" data-key="navHome">Home</a>
     <a href="#about" data-key="navAbout">About</a>
@@ -91,46 +113,39 @@ p {
   </nav>
 </header>
 
-<!-- HOME -->
 <section id="home">
-  <h1 data-key="homeTitle">Think Future. Live Now.</h1>
-  <p data-key="homeText">
-    Mango Time is a future-focused technology brand created to shape digital experiences.
-  </p>
+  <h1 data-key="homeTitle">Welcome to Mango Time 🚀</h1>
+  <p data-key="homeText">Discover the future of technology</p>
+  <a href="#about" class="btn">About</a>
+  <a href="#vision" class="btn">Vision</a>
+  <a href="#contact" class="btn">Contact</a>
+  <div class="credit">Created by hsjaze</div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <h2 data-key="aboutTitle">About Mango Time</h2>
-  <p data-key="aboutText">
-    Mango Time is a modern tech initiative focused on innovation, creativity, and global vision.
-  </p>
+  <p data-key="aboutText">Mango Time is a future-focused technology brand created to shape digital experiences.</p>
 </section>
 
-<!-- VISION -->
 <section id="vision">
   <h2 data-key="visionTitle">Our Vision</h2>
-  <p data-key="visionText">
-    Our vision is to build digital products that connect people with the future.
-  </p>
+  <p data-key="visionText">Our vision is to build digital products that connect people with the future.</p>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <h2 data-key="contactTitle">Contact</h2>
-  <p data-key="contactText">
-    For collaborations and ideas, reach out to Mango Time.
-  </p>
+  <p data-key="contactText">For collaborations and ideas, reach out to Mango Time.</p>
 </section>
 
-<!-- LANGUAGE BUTTONS -->
-<div class="lang">
+<!-- LANGUAGE SWITCH -->
+<div class="lang-switch">
   <button onclick="setLang('en')">EN</button>
   <button onclick="setLang('tr')">TR</button>
   <button onclick="setLang('es')">ES</button>
 </div>
 
 <script>
+// TRANSLATIONS (mətnlərin mənası eyni qalır)
 const translations = {
   en: {
     logo: "Mango Time",
@@ -138,49 +153,48 @@ const translations = {
     navAbout: "About",
     navVision: "Vision",
     navContact: "Contact",
-    homeTitle: "Think Future. Live Now.",
-    homeText: "Mango Time is a future-focused technology brand created to shape digital experiences.",
+    homeTitle: "Welcome to Mango Time 🚀",
+    homeText: "Discover the future of technology",
     aboutTitle: "About Mango Time",
-    aboutText: "Mango Time is a modern tech initiative focused on innovation, creativity, and global vision.",
+    aboutText: "Mango Time is a future-focused technology brand created to shape digital experiences.",
     visionTitle: "Our Vision",
     visionText: "Our vision is to build digital products that connect people with the future.",
     contactTitle: "Contact",
     contactText: "For collaborations and ideas, reach out to Mango Time."
   },
-
   tr: {
     logo: "Mango Time",
-    navHome: "Ana Sayfa",
-    navAbout: "Hakkında",
-    navVision: "Vizyon",
-    navContact: "İletişim",
-    homeTitle: "Geleceği Düşün. Şimdi Yaşa.",
-    homeText: "Mango Time, dijital deneyimleri şekillendirmek için oluşturulmuş teknoloji markasıdır.",
-    aboutTitle: "Mango Time Hakkında",
-    aboutText: "Mango Time, yenilik ve yaratıcılığa odaklanan modern bir teknoloji girişimidir.",
-    visionTitle: "Vizyonumuz",
-    visionText: "İnsanları gelecekle buluşturan dijital ürünler geliştirmek.",
-    contactTitle: "İletişim",
-    contactText: "İş birlikleri için Mango Time ile iletişime geçin."
+    navHome: "Home",
+    navAbout: "About",
+    navVision: "Vision",
+    navContact: "Contact",
+    homeTitle: "Welcome to Mango Time 🚀",
+    homeText: "Discover the future of technology",
+    aboutTitle: "About Mango Time",
+    aboutText: "Mango Time is a future-focused technology brand created to shape digital experiences.",
+    visionTitle: "Our Vision",
+    visionText: "Our vision is to build digital products that connect people with the future.",
+    contactTitle: "Contact",
+    contactText: "For collaborations and ideas, reach out to Mango Time."
   },
-
   es: {
     logo: "Mango Time",
-    navHome: "Inicio",
-    navAbout: "Sobre",
-    navVision: "Visión",
-    navContact: "Contacto",
-    homeTitle: "Piensa en el futuro. Vive ahora.",
-    homeText: "Mango Time es una marca tecnológica enfocada en el futuro.",
-    aboutTitle: "Sobre Mango Time",
-    aboutText: "Mango Time es una iniciativa tecnológica moderna centrada en la innovación.",
-    visionTitle: "Nuestra Visión",
-    visionText: "Crear productos digitales que conecten a las personas con el futuro.",
-    contactTitle: "Contacto",
-    contactText: "Para colaboraciones, contacta con Mango Time."
+    navHome: "Home",
+    navAbout: "About",
+    navVision: "Vision",
+    navContact: "Contact",
+    homeTitle: "Welcome to Mango Time 🚀",
+    homeText: "Discover the future of technology",
+    aboutTitle: "About Mango Time",
+    aboutText: "Mango Time is a future-focused technology brand created to shape digital experiences.",
+    visionTitle: "Our Vision",
+    visionText: "Our vision is to build digital products that connect people with the future.",
+    contactTitle: "Contact",
+    contactText: "For collaborations and ideas, reach out to Mango Time."
   }
 };
 
+// DİL FUNKSİYASI
 function setLang(lang) {
   document.querySelectorAll("[data-key]").forEach(el => {
     el.textContent = translations[lang][el.dataset.key];
