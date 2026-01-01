@@ -14,3 +14,36 @@ section{padding:80px 20px;max-width:900px;margin:auto;}
 h2{font-size:36px;margin-bottom:20px;color:#ffd700;}
 p{font-size:24px;margin-bottom:40px;}
 .lang-switch{position:fixed;bottom:15px;right:20px;font-size:14px;opacity:.7;}
+.lang-switch button{background:transparent;border:1px solid #00fff7;color:#00fff7;margin-left:5px;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" data-key="logo">Mango Time</div>
+  <nav>
+    <a href="index.html" data-key="navHome">Home</a>
+    <a href="about.html" data-key="navAbout">About</a>
+    <a href="vision.html" data-key="navVision">Vision</a>
+    <a href="contact.html" data-key="navContact">Contact</a>
+  </nav>
+</header>
+
+<section id="about">
+  <h2 data-key="aboutTitle">About Mango Time</h2>
+  <p data-key="aboutText">The Mango Time company was founded on 23 December 2025 by Abraham hsjaze. Our main goal is to become a major technology company, create our AI, and achieve great things.</p>
+</section>
+
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('tr')">TR</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
+
+<script>
+const translations={en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"The Mango Time company was founded on 23 December 2025 by Abraham hsjaze. Our main goal is to become a major technology company, create our AI, and achieve great things."},tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"The Mango Time company was founded on 23 December 2025 by Abraham hsjaze. Our main goal is to become a major technology company, create our AI, and achieve great things."},es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"The Mango Time company was founded on 23 December 2025 by Abraham hsjaze. Our main goal is to become a major technology company, create our AI, and achieve great things."}};
+function setLang(lang){document.querySelectorAll("[data-key]").forEach(el=>{el.textContent=translations[lang][el.dataset.key];});}
+</script>
+
+</body>
+</html>
