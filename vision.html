@@ -1,113 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Vision – Mango Time</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #000;
-      color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.95);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 6px 18px;
-    }
-
-    header h2 {
-      font-size: 20px;
-      color: #ffd700;
-      animation: neon 1.8s infinite alternate;
-    }
-
-    @keyframes neon {
-      from { text-shadow: 0 0 6px #ffd700; }
-      to {
-        text-shadow:
-          0 0 10px #ffd700,
-          0 0 20px #ffb700,
-          0 0 35px #ff9f00;
-      }
-    }
-
-    nav {
-      display: flex;
-      gap: 14px;
-    }
-
-    nav a {
-      color: #f5f5f5;
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #ffd700;
-    }
-
-    .container {
-      max-width: 90%;
-    }
-
-    h1 {
-      font-size: clamp(48px, 6vw, 72px);
-      color: #ffd700;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      font-size: clamp(28px, 4vw, 36px);
-      margin-top: 25px;
-      color: #ffdd88;
-    }
-
-    p {
-      font-size: clamp(18px, 3vw, 26px);
-      line-height: 1.6;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mango Time - Vision</title>
+<style>
+body {margin:0;font-family:Arial, sans-serif;background:#000;color:white;text-align:center;}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 40px;}
+.logo{font-size:26px;font-weight:600;color:#00fff7;text-shadow:0 0 8px #00fff7;}
+nav a{margin:0 10px;text-decoration:none;color:white;font-size:14px;}
+nav a:hover{color:#00fff7;}
+section{padding:80px 20px;max-width:900px;margin:auto;}
+h2{font-size:36px;margin-bottom:20px;color:#ffd700;}
+p{font-size:24px;margin-bottom:40px;}
+.lang-switch{position:fixed;bottom:15px;right:20px;font-size:14px;opacity:.7;}
+.lang-switch button{background:transparent;border:1px solid #00fff7;color:#00fff7;margin-left:5px;cursor:pointer;}
+</style>
 </head>
-
 <body>
 
 <header>
-  <h2>Mango Time</h2>
+  <div class="logo" data-key="logo">Mango Time</div>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="vision.html">Vision</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" data-key="navHome">Home</a>
+    <a href="about.html" data-key="navAbout">About</a>
+    <a href="vision.html" data-key="navVision">Vision</a>
+    <a href="contact.html" data-key="navContact">Contact</a>
   </nav>
 </header>
 
-<div class="container">
-  <h1>Vision</h1>
+<section id="vision">
+  <h2 data-key="visionTitle">Our Vision</h2>
+  <p data-key="visionText">Our vision is to build digital products that connect people with the future.</p>
+</section>
 
-  <h2>Mission</h2>
-  <p>
-    Our mission is to become a global technology company and build our own artificial intelligence systems.
-  </p>
-
-  <h2>Future Goals</h2>
-  <p>
-    Creating innovative AI products, smart automation tools, and future-oriented digital solutions.
-  </p>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('tr')">TR</button>
+  <button onclick="setLang('es')">ES</button>
 </div>
+
+<script>
+const translations={en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",visionTitle:"Our Vision",visionText:"Our vision is to build digital products that connect people with the future."},tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",visionTitle:"Our Vision",visionText:"Our vision is to build digital products that connect people with the future."},es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",visionTitle:"Our Vision",visionText:"Our vision is to build digital products that connect people with the future."}};
+function setLang(lang){document.querySelectorAll("[data-key]").forEach(el=>{el.textContent=translations[lang][el.dataset.key];});}
+</script>
 
 </body>
 </html>
