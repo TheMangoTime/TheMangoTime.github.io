@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<script src="auth.js"></script>
+</head>
+<body onload="load()">
+
+<h2 id="welcome"></h2>
+
+<a href="profile.html">My Profile</a><br><br>
+<button onclick="logout()">Logout</button>
+
+<script>
+function load() {
+  protectPage();
+  const user = getCurrentUser();
+  welcome.innerText = "Welcome, " + user.username;
+}
+</script>
+
+</body>
+</html>
