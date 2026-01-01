@@ -4,27 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About - Mango Time</title>
-<style>
-body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
-nav a { color: cyan; margin: 0 15px; text-decoration: none; font-weight: bold; }
-h1 { font-size: 2.5em; margin-top: 50px; }
-p { font-size: 1.3em; margin: 20px; max-width: 800px; margin-left:auto;margin-right:auto;}
-button { padding: 10px 20px; margin: 10px; font-size:1em; cursor:pointer; border:none;border-radius:5px;background-color:cyan;color:black;}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="renderAuthButtons(); renderLanguage();">
 
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="vision.html">Vision</a>
   <a href="contact.html">Contact</a>
+  <span id="auth-buttons"></span>
+  <span id="language-switch"></span>
 </nav>
 
-<h1>About Mango Time</h1>
-<p>The Mango Time company was founded on December 23, 2025 by Abraham HSJAZE. Our main goal is to become a major technology company, create our own AI, and achieve big things.</p>
+<h1 data-en="About Mango Time" data-tr="Mango Time Hakkında" data-es="Acerca de Mango Time">About Mango Time</h1>
+<p data-en="The Mango Time company was founded on December 23, 2025 by Abraham HSJAZE. Our main goal is to become a major technology company, create our own AI, and achieve big things."
+   data-tr="Mango Time şirketi 23 Aralık 2025'te Abraham HSJAZE tarafından kuruldu. Ana hedefimiz büyük bir teknoloji şirketi olmak, kendi AI'mızı yaratmak ve büyük işler başarmaktır."
+   data-es="La empresa Mango Time fue fundada el 23 de diciembre de 2025 por Abraham HSJAZE. Nuestro objetivo principal es convertirnos en una gran empresa tecnológica, crear nuestra propia IA y lograr grandes cosas.">
+The Mango Time company was founded on December 23, 2025 by Abraham HSJAZE. Our main goal is to become a major technology company, create our own AI, and achieve big things.
+</p>
 
-<button onclick="window.location.href='index.html'">Back to Home</button>
+<button onclick="window.location.href='index.html'" data-en="Back to Home" data-tr="Geri Dön" data-es="Volver a Inicio">Back to Home</button>
 
+<footer>
+  Created by HSJAZE
+</footer>
+
+<script src="auth.js"></script>
+<script src="lang.js"></script>
 </body>
 </html>
