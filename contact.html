@@ -4,26 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact - Mango Time</title>
-<style>
-body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
-nav a { color: cyan; margin: 0 15px; text-decoration: none; font-weight: bold; }
-h1 { font-size: 2.5em; margin-top: 50px; }
-p { font-size: 1.3em; margin: 10px; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="renderAuthButtons(); renderLanguage();">
 
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="vision.html">Vision</a>
   <a href="contact.html">Contact</a>
+  <span id="auth-buttons"></span>
+  <span id="language-switch"></span>
 </nav>
 
-<h1>Contact Mango Time</h1>
-<p>Email: hsjazebusiness@gmail.com</p>
-<p>Instagram: themangotime</p>
-<p>TikTok: themangotimecompany</p>
+<h1 data-en="Contact Mango Time" data-tr="Mango Time ile İletişim" data-es="Contactar Mango Time">Contact Mango Time</h1>
 
+<p data-en="Email: hsjazebusiness@gmail.com" data-tr="E-posta: hsjazebusiness@gmail.com" data-es="Correo: hsjazebusiness@gmail.com">Email: hsjazebusiness@gmail.com</p>
+<p data-en="Instagram: themangotime" data-tr="Instagram: themangotime" data-es="Instagram: themangotime">Instagram: themangotime</p>
+<p data-en="TikTok: themangotimecompany" data-tr="TikTok: themangotimecompany" data-es="TikTok: themangotimecompany">TikTok: themangotimecompany</p>
+
+<footer>
+  Created by HSJAZE
+</footer>
+
+<script src="auth.js"></script>
+<script src="lang.js"></script>
 </body>
 </html>
