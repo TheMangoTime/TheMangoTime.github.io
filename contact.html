@@ -12,7 +12,9 @@ nav a{margin:0 10px;text-decoration:none;color:white;font-size:14px;}
 nav a:hover{color:#00fff7;}
 section{padding:80px 20px;max-width:900px;margin:auto;}
 h2{font-size:36px;margin-bottom:20px;color:#ffd700;}
-p{font-size:24px;margin-bottom:40px;}
+p{font-size:24px;margin-bottom:10px;}
+a.social{color:#00fff7;text-decoration:none;font-size:20px;margin:0 10px;}
+a.social:hover{color:#ffd700;}
 .lang-switch{position:fixed;bottom:15px;right:20px;font-size:14px;opacity:.7;}
 .lang-switch button{background:transparent;border:1px solid #00fff7;color:#00fff7;margin-left:5px;cursor:pointer;}
 </style>
@@ -31,7 +33,9 @@ p{font-size:24px;margin-bottom:40px;}
 
 <section id="contact">
   <h2 data-key="contactTitle">Contact</h2>
-  <p data-key="contactText">For collaborations and ideas, reach out to Mango Time.</p>
+  <p>Email: <a class="social" href="mailto:hsjazebusiness@gmail.com">hsjazebusiness@gmail.com</a></p>
+  <p>Instagram: <a class="social" href="https://www.instagram.com/themangotime" target="_blank">@themangotime</a></p>
+  <p>TikTok: <a class="social" href="https://www.tiktok.com/@themangotimecompany" target="_blank">@themangotimecompany</a></p>
 </section>
 
 <div class="lang-switch">
@@ -41,7 +45,7 @@ p{font-size:24px;margin-bottom:40px;}
 </div>
 
 <script>
-const translations={en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",contactTitle:"Contact",contactText:"For collaborations and ideas, reach out to Mango Time."},tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",contactTitle:"Contact",contactText:"For collaborations and ideas, reach out to Mango Time."},es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",contactTitle:"Contact",contactText:"For collaborations and ideas, reach out to Mango Time."}};
+const translations={en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",contactTitle:"Contact"},tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",contactTitle:"Contact"},es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",contactTitle:"Contact"}};
 function setLang(lang){document.querySelectorAll("[data-key]").forEach(el=>{el.textContent=translations[lang][el.dataset.key];});}
 </script>
 
