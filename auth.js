@@ -37,7 +37,7 @@ function getCurrentUser() {
 
 function logout() {
   localStorage.removeItem("currentUser");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 function protectPage() {
