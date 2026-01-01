@@ -1,64 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact – Mango Time</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background: #0b0c10;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 70px 20px;
-    }
-
-    h1 {
-      font-size: 50px;
-      color: #ff7a00;
-      margin-bottom: 40px;
-    }
-
-    p {
-      font-size: 22px;
-      margin: 15px 0;
-    }
-
-    a {
-      color: #f0c36d;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 12px 35px;
-      font-size: 20px;
-      background: #ff7a00;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #ff9a2f;
-      transform: scale(1.05);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mango Time - Contact</title>
+<style>
+body {margin:0;font-family:Arial, sans-serif;background:#000;color:white;text-align:center;}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 40px;}
+.logo{font-size:26px;font-weight:600;color:#00fff7;text-shadow:0 0 8px #00fff7;}
+nav a{margin:0 10px;text-decoration:none;color:white;font-size:14px;}
+nav a:hover{color:#00fff7;}
+section{padding:80px 20px;max-width:900px;margin:auto;}
+h2{font-size:36px;margin-bottom:20px;color:#ffd700;}
+p{font-size:24px;margin-bottom:40px;}
+.lang-switch{position:fixed;bottom:15px;right:20px;font-size:14px;opacity:.7;}
+.lang-switch button{background:transparent;border:1px solid #00fff7;color:#00fff7;margin-left:5px;cursor:pointer;}
+</style>
 </head>
 <body>
 
-  <h1>Contact Us</h1>
+<header>
+  <div class="logo" data-key="logo">Mango Time</div>
+  <nav>
+    <a href="index.html" data-key="navHome">Home</a>
+    <a href="about.html" data-key="navAbout">About</a>
+    <a href="vision.html" data-key="navVision">Vision</a>
+    <a href="contact.html" data-key="navContact">Contact</a>
+  </nav>
+</header>
 
-  <p>📧 Email: <a href="mailto:hsjazebusiness@gmail.com">hsjazebusiness@gmail.com</a></p>
-  <p>📸 Instagram: <a href="https://instagram.com/themangotime" target="_blank">@themangotime</a></p>
-  <p>🎵 TikTok: <a href="https://tiktok.com/@themangotimecompany" target="_blank">@themangotimecompany</a></p>
+<section id="contact">
+  <h2 data-key="contactTitle">Contact</h2>
+  <p data-key="contactText">For collaborations and ideas, reach out to Mango Time.</p>
+</section>
 
-  <a href="index.html" class="btn">Home</a>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('tr')">TR</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
+
+<script>
+const translations={en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",contactTitle:"Contact",contactText:"For collaborations and ideas, reach out to Mango Time."},tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",contactTitle:"Contact",contactText:"For collaborations and ideas, reach out to Mango Time."},es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",contactTitle:"Contact",contactText:"For collaborations and ideas, reach out to Mango Time."}};
+function setLang(lang){document.querySelectorAll("[data-key]").forEach(el=>{el.textContent=translations[lang][el.dataset.key];});}
+</script>
 
 </body>
 </html>
