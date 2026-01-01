@@ -3,141 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mango Time</title>
-
+<title>Mango Time - Home</title>
 <style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
-  color: white;
-  text-align: center;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px;
-}
-
-.logo {
-  font-size: 26px;
-  font-weight: 600;
-  color: #00fff7;
-  text-shadow: 0 0 8px #00fff7;
-}
-
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
-}
-
-nav a:hover {
-  color: #00fff7;
-}
-
-/* Sections */
-section {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-h1 {
-  font-size: 56px;
-  margin-bottom: 20px;
-  color: #ffd700;
-}
-
-p {
-  font-size: 24px;
-  margin-bottom: 40px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 14px 36px;
-  font-size: 20px;
-  color: #000;
-  background: #ffd700;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #ffea70;
-  transform: scale(1.05);
-}
-
-/* Credit */
-.credit {
-  margin-top: 40px;
-  font-size: 18px;
-  opacity: 0.8;
-}
-
-/* Language switch */
-.lang-switch {
-  position: fixed;
-  bottom: 15px;
-  right: 20px;
-  font-size: 14px;
-  opacity: 0.7;
-}
-
-.lang-switch button {
-  background: transparent;
-  border: 1px solid #00fff7;
-  color: #00fff7;
-  margin-left: 5px;
-  cursor: pointer;
-}
+body {margin:0;font-family:Arial, sans-serif;background:#000;color:white;text-align:center;}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 40px;}
+.logo{font-size:26px;font-weight:600;color:#00fff7;text-shadow:0 0 8px #00fff7;}
+nav a{margin:0 10px;text-decoration:none;color:white;font-size:14px;}
+nav a:hover{color:#00fff7;}
+section{padding:80px 20px;max-width:900px;margin:auto;}
+h1{font-size:56px;margin-bottom:20px;color:#ffd700;}
+p{font-size:24px;margin-bottom:40px;}
+.btn{display:inline-block;margin:10px;padding:14px 36px;font-size:20px;color:#000;background:#ffd700;border-radius:10px;text-decoration:none;transition:.3s;}
+.btn:hover{background:#ffea70;transform:scale(1.05);}
+.credit{margin-top:40px;font-size:18px;opacity:.8;}
+.lang-switch{position:fixed;bottom:15px;right:20px;font-size:14px;opacity:.7;}
+.lang-switch button{background:transparent;border:1px solid #00fff7;color:#00fff7;margin-left:5px;cursor:pointer;}
 </style>
 </head>
-
 <body>
 
 <header>
   <div class="logo" data-key="logo">Mango Time</div>
   <nav>
-    <a href="#home" data-key="navHome">Home</a>
-    <a href="#about" data-key="navAbout">About</a>
-    <a href="#vision" data-key="navVision">Vision</a>
-    <a href="#contact" data-key="navContact">Contact</a>
+    <a href="index.html" data-key="navHome">Home</a>
+    <a href="about.html" data-key="navAbout">About</a>
+    <a href="vision.html" data-key="navVision">Vision</a>
+    <a href="contact.html" data-key="navContact">Contact</a>
   </nav>
 </header>
 
 <section id="home">
   <h1 data-key="homeTitle">Welcome to Mango Time 🚀</h1>
   <p data-key="homeText">Discover the future of technology</p>
-  <a href="#about" class="btn">About</a>
-  <a href="#vision" class="btn">Vision</a>
-  <a href="#contact" class="btn">Contact</a>
+  <a href="about.html" class="btn">About</a>
+  <a href="vision.html" class="btn">Vision</a>
+  <a href="contact.html" class="btn">Contact</a>
   <div class="credit">Created by hsjaze</div>
 </section>
 
-<section id="about">
-  <h2 data-key="aboutTitle">About Mango Time</h2>
-  <p data-key="aboutText">Mango Time is a future-focused technology brand created to shape digital experiences.</p>
-</section>
-
-<section id="vision">
-  <h2 data-key="visionTitle">Our Vision</h2>
-  <p data-key="visionText">Our vision is to build digital products that connect people with the future.</p>
-</section>
-
-<section id="contact">
-  <h2 data-key="contactTitle">Contact</h2>
-  <p data-key="contactText">For collaborations and ideas, reach out to Mango Time.</p>
-</section>
-
-<!-- LANGUAGE SWITCH -->
 <div class="lang-switch">
   <button onclick="setLang('en')">EN</button>
   <button onclick="setLang('tr')">TR</button>
@@ -145,62 +48,12 @@ p {
 </div>
 
 <script>
-// TRANSLATIONS (mətnlərin mənası eyni qalır)
 const translations = {
-  en: {
-    logo: "Mango Time",
-    navHome: "Home",
-    navAbout: "About",
-    navVision: "Vision",
-    navContact: "Contact",
-    homeTitle: "Welcome to Mango Time 🚀",
-    homeText: "Discover the future of technology",
-    aboutTitle: "About Mango Time",
-    aboutText: "Mango Time is a future-focused technology brand created to shape digital experiences.",
-    visionTitle: "Our Vision",
-    visionText: "Our vision is to build digital products that connect people with the future.",
-    contactTitle: "Contact",
-    contactText: "For collaborations and ideas, reach out to Mango Time."
-  },
-  tr: {
-    logo: "Mango Time",
-    navHome: "Home",
-    navAbout: "About",
-    navVision: "Vision",
-    navContact: "Contact",
-    homeTitle: "Welcome to Mango Time 🚀",
-    homeText: "Discover the future of technology",
-    aboutTitle: "About Mango Time",
-    aboutText: "Mango Time is a future-focused technology brand created to shape digital experiences.",
-    visionTitle: "Our Vision",
-    visionText: "Our vision is to build digital products that connect people with the future.",
-    contactTitle: "Contact",
-    contactText: "For collaborations and ideas, reach out to Mango Time."
-  },
-  es: {
-    logo: "Mango Time",
-    navHome: "Home",
-    navAbout: "About",
-    navVision: "Vision",
-    navContact: "Contact",
-    homeTitle: "Welcome to Mango Time 🚀",
-    homeText: "Discover the future of technology",
-    aboutTitle: "About Mango Time",
-    aboutText: "Mango Time is a future-focused technology brand created to shape digital experiences.",
-    visionTitle: "Our Vision",
-    visionText: "Our vision is to build digital products that connect people with the future.",
-    contactTitle: "Contact",
-    contactText: "For collaborations and ideas, reach out to Mango Time."
-  }
+en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Welcome to Mango Time 🚀",homeText:"Discover the future of technology"},
+tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Welcome to Mango Time 🚀",homeText:"Discover the future of technology"},
+es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Welcome to Mango Time 🚀",homeText:"Discover the future of technology"}
 };
-
-// DİL FUNKSİYASI
-function setLang(lang) {
-  document.querySelectorAll("[data-key]").forEach(el => {
-    el.textContent = translations[lang][el.dataset.key];
-  });
-}
+function setLang(lang){document.querySelectorAll("[data-key]").forEach(el=>{el.textContent=translations[lang][el.dataset.key];});}
 </script>
-
 </body>
 </html>
