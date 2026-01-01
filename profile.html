@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+<script src="auth.js"></script>
+</head>
+<body onload="loadProfile()">
+
+<h2>My Profile</h2>
+
+<p><b>Username:</b> <span id="u"></span></p>
+<p><b>Email:</b> <span id="e"></span></p>
+<p><b>Account created:</b> <span id="c"></span></p>
+<p><b>Status:</b> Active</p>
+
+<br>
+<a href="dashboard.html">Back to Dashboard</a><br><br>
+<button onclick="logout()">Logout</button>
+
+<script>
+function loadProfile() {
+  protectPage();
+  const user = getCurrentUser();
+  u.innerText = user.username;
+  e.innerText = user.email;
+  c.innerText = user.createdAt;
+}
+</script>
+
+</body>
+</html>
