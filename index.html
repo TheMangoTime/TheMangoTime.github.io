@@ -46,13 +46,14 @@ footer {
 }
 </style>
 </head>
-<body>
+<body onload="renderAuthButtons()">
 
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="vision.html">Vision</a>
   <a href="contact.html">Contact</a>
+  <span id="auth-buttons"></span>
 </nav>
 
 <h1>Welcome to Mango Time</h1>
@@ -63,6 +64,11 @@ footer {
 <footer>
   Created by HSJAZE
 </footer>
+
+<script src="auth.js"></script>
+<script>
+renderAuthButtons();
+</script>
 
 </body>
 </html>
