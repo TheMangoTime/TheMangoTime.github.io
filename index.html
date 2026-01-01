@@ -4,49 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mango Time</title>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: black;
-  color: white;
-  text-align: center;
-}
-nav {
-  background-color: #111;
-  padding: 10px;
-}
-nav a {
-  color: cyan;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-h1 {
-  font-size: 3em;
-  margin-top: 50px;
-}
-p {
-  font-size: 1.5em;
-}
-button {
-  padding: 10px 20px;
-  font-size: 1em;
-  margin: 10px;
-  cursor: pointer;
-  background-color: cyan;
-  border: none;
-  border-radius: 5px;
-  color: black;
-}
-footer {
-  margin-top: 50px;
-  font-size: 0.9em;
-  color: #aaa;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-<body onload="renderAuthButtons()">
+<body onload="renderAuthButtons(); renderLanguage();">
 
 <nav>
   <a href="index.html">Home</a>
@@ -54,21 +14,23 @@ footer {
   <a href="vision.html">Vision</a>
   <a href="contact.html">Contact</a>
   <span id="auth-buttons"></span>
+  <span id="language-switch"></span>
 </nav>
 
-<h1>Welcome to Mango Time</h1>
-<p>Discover the future of technology with Mango Time 🚀</p>
+<h1 data-en="Welcome to Mango Time" data-tr="Mango Time'a Hoşgeldiniz" data-es="Bienvenido a Mango Time">Welcome to Mango Time</h1>
+<p data-en="Discover the future of technology with Mango Time 🚀"
+   data-tr="Mango Time ile teknolojinin geleceğini keşfedin 🚀"
+   data-es="Descubre el futuro de la tecnología con Mango Time 🚀">
+   Discover the future of technology with Mango Time 🚀
+</p>
 
-<button onclick="window.location.href='about.html'">About</button>
+<button onclick="window.location.href='about.html'" data-en="About" data-tr="Hakkında" data-es="Acerca de">About</button>
 
 <footer>
   Created by HSJAZE
 </footer>
 
 <script src="auth.js"></script>
-<script>
-renderAuthButtons();
-</script>
-
+<script src="lang.js"></script>
 </body>
 </html>
