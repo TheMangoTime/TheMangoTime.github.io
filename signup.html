@@ -6,21 +6,15 @@
 </head>
 <body>
 <h2>Create Account</h2>
-
 <input id="username" placeholder="Username"><br>
 <input id="email" placeholder="Email"><br>
 <input id="password" type="password" placeholder="Password"><br><br>
-
 <button onclick="create()">Sign Up</button>
 <p id="msg"></p>
 
 <script>
 function create() {
-  const res = signup(
-    username.value,
-    email.value,
-    password.value
-  );
+  const res = signup(username.value, email.value, password.value);
   if (res === "success") {
     window.location.href = "login.html";
   } else {
