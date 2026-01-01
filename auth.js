@@ -1,4 +1,5 @@
 <script>
+// ====== ACCOUNT FUNCTIONS ======
 function getUsers() {
   return JSON.parse(localStorage.getItem("users")) || [];
 }
@@ -42,6 +43,27 @@ function logout() {
 function protectPage() {
   if (!getCurrentUser()) {
     window.location.href = "login.html";
+  }
+}
+
+// ====== NAVBAR AUTH BUTTONS ======
+function renderAuthButtons() {
+  const container = document.getElementById("auth-buttons");
+  if (!container) return;
+
+  const user = getCurrentUser();
+
+  if (user) {
+    container.innerHTML = `
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">Profile</a>
+      <a href="#" onclick="logout()">Logout</a>
+    `;
+  } else {
+    container.innerHTML = `
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    `;
   }
 }
 </script>
