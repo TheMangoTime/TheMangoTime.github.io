@@ -41,8 +41,19 @@ p{font-size:24px;margin-bottom:40px;}
 </div>
 
 <script>
-const translations={en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",visionTitle:"Our Vision",visionText:"Our vision is to build digital products that connect people with the future."},tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",visionTitle:"Our Vision",visionText:"Our vision is to build digital products that connect people with the future."},es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",visionTitle:"Our Vision",visionText:"Our vision is to build digital products that connect people with the future."}};
-function setLang(lang){document.querySelectorAll("[data-key]").forEach(el=>{el.textContent=translations[lang][el.dataset.key];});}
+const translations={en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",visionTitle:"Our Vision",visionText:"Our vision is to build digital products that connect people with the future."},tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",visionTitle:"Our Vision",visionText:"Vizyonumuz, insanları gelecekle buluşturan dijital ürünler geliştirmektir."},es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",visionTitle:"Our Vision",visionText:"Nuestra visión es crear productos digitales que conecten a las personas con el futuro."}};
+
+function setLang(lang){
+  localStorage.setItem('lang', lang);
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    if(translations[lang][el.dataset.key]) el.textContent=translations[lang][el.dataset.key];
+  });
+}
+
+window.onload = function(){
+  const lang = localStorage.getItem('lang') || 'en';
+  setLang(lang);
+};
 </script>
 
 </body>
