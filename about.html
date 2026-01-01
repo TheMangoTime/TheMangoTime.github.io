@@ -41,8 +41,19 @@ p{font-size:24px;margin-bottom:40px;}
 </div>
 
 <script>
-const translations={en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"The Mango Time company was founded on 23 December 2025 by Abraham hsjaze. Our main goal is to become a major technology company, create our AI, and achieve great things."},tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"The Mango Time company was founded on 23 December 2025 by Abraham hsjaze. Our main goal is to become a major technology company, create our AI, and achieve great things."},es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"The Mango Time company was founded on 23 December 2025 by Abraham hsjaze. Our main goal is to become a major technology company, create our AI, and achieve great things."}};
-function setLang(lang){document.querySelectorAll("[data-key]").forEach(el=>{el.textContent=translations[lang][el.dataset.key];});}
+const translations={en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"The Mango Time company was founded on 23 December 2025 by Abraham hsjaze. Our main goal is to become a major technology company, create our AI, and achieve great things."},tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"Mango Time şirketi 23 Aralık 2025'te Abraham hsjaze tarafından kuruldu. Ana hedefimiz büyük bir teknoloji şirketi olmak, AI'mızı yaratmak ve büyük işler başarmaktır."},es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",aboutTitle:"About Mango Time",aboutText:"La empresa Mango Time fue fundada el 23 de diciembre de 2025 por Abraham hsjaze. Nuestro objetivo principal es convertirnos en una gran empresa tecnológica, crear nuestra IA y lograr grandes cosas."}};
+
+function setLang(lang){
+  localStorage.setItem('lang', lang);
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    if(translations[lang][el.dataset.key]) el.textContent=translations[lang][el.dataset.key];
+  });
+}
+
+window.onload = function(){
+  const lang = localStorage.getItem('lang') || 'en';
+  setLang(lang);
+};
 </script>
 
 </body>
