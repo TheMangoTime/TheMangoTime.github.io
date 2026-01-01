@@ -1,72 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mango Time - Home</title>
+<title>Mango Time</title>
+<script src="auth.js"></script>
 <style>
-body {margin:0;font-family:Arial, sans-serif;background:#000;color:white;text-align:center;}
-header{display:flex;justify-content:space-between;align-items:center;padding:10px 40px;}
-.logo{font-size:26px;font-weight:600;color:#00fff7;text-shadow:0 0 8px #00fff7;}
-nav a{margin:0 10px;text-decoration:none;color:white;font-size:14px;}
-nav a:hover{color:#00fff7;}
-section{padding:80px 20px;max-width:900px;margin:auto;}
-h1{font-size:56px;margin-bottom:20px;color:#ffd700;}
-p{font-size:24px;margin-bottom:40px;}
-.btn{display:inline-block;margin:10px;padding:14px 36px;font-size:20px;color:#000;background:#ffd700;border-radius:10px;text-decoration:none;transition:.3s;}
-.btn:hover{background:#ffea70;transform:scale(1.05);}
-.credit{margin-top:40px;font-size:18px;opacity:.8;}
-.lang-switch{position:fixed;bottom:15px;right:20px;font-size:14px;opacity:.7;}
-.lang-switch button{background:transparent;border:1px solid #00fff7;color:#00fff7;margin-left:5px;cursor:pointer;}
+body { background: #000; color: #fff; text-align: center; font-family: Arial, sans-serif; }
+nav a { margin: 0 10px; color: cyan; text-decoration: none; }
 </style>
 </head>
-<body>
+<body onload="renderAuthButtons()">
 
-<header>
-  <div class="logo" data-key="logo">Mango Time</div>
-  <nav>
-    <a href="index.html" data-key="navHome">Home</a>
-    <a href="about.html" data-key="navAbout">About</a>
-    <a href="vision.html" data-key="navVision">Vision</a>
-    <a href="contact.html" data-key="navContact">Contact</a>
-  </nav>
-</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="vision.html">Vision</a>
+  <a href="contact.html">Contact</a>
+  <span id="auth-buttons"></span>
+</nav>
 
-<section id="home">
-  <h1 data-key="homeTitle">Welcome to Mango Time 🚀</h1>
-  <p data-key="homeText">Discover the future of technology</p>
-  <a href="about.html" class="btn" data-key="btnAbout">About</a>
-  <a href="vision.html" class="btn" data-key="btnVision">Vision</a>
-  <a href="contact.html" class="btn" data-key="btnContact">Contact</a>
-  <div class="credit" data-key="credit">Created by hsjaze</div>
-</section>
-
-<div class="lang-switch">
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('tr')">TR</button>
-  <button onclick="setLang('es')">ES</button>
-</div>
-
-<script>
-const translations={
-en:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Welcome to Mango Time 🚀",homeText:"Discover the future of technology",btnAbout:"About",btnVision:"Vision",btnContact:"Contact",credit:"Created by hsjaze"},
-tr:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Mango Time'e Hoş Geldiniz 🚀",homeText:"Teknolojinin geleceğini keşfedin",btnAbout:"About",btnVision:"Vision",btnContact:"Contact",credit:"Created by hsjaze"},
-es:{logo:"Mango Time",navHome:"Home",navAbout:"About",navVision:"Vision",navContact:"Contact",homeTitle:"Bienvenido a Mango Time 🚀",homeText:"Descubre el futuro de la tecnología",btnAbout:"About",btnVision:"Vision",btnContact:"Contact",credit:"Created by hsjaze"}
-};
-
-function setLang(lang){
-  localStorage.setItem('lang', lang);
-  document.querySelectorAll("[data-key]").forEach(el=>{
-    if(translations[lang][el.dataset.key]) el.textContent=translations[lang][el.dataset.key];
-  });
-}
-
-// Yüklənəndə saxlanmış dili istifadə et
-window.onload = function(){
-  const lang = localStorage.getItem('lang') || 'en';
-  setLang(lang);
-};
-</script>
+<h1>Welcome to Mango Time</h1>
+<p>The future of technology starts here</p>
 
 </body>
 </html>
